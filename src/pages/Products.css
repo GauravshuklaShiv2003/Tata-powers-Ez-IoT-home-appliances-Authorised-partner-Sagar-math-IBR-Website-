@@ -1,0 +1,67 @@
+.products-page {
+  padding: 120px 5% 60px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.products-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  /* Gradient text effect with compatibility */
+  background: linear-gradient(to right, #ffffff, #a0aec0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support clipping */
+  -webkit-text-fill-color: transparent;
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prod-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease; /* Ensure transition variable is defined or use ease */
+  text-align: center;
+}
+
+.prod-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-8px);
+}
+
+.prod-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(26, 124, 255, 0.15);
+  color: var(--accent-blue);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.prod-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .products-list { grid-template-columns: 1fr; }
+  .products-header h1 { font-size: 2rem; }
+}

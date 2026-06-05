@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #060d1a;
+  --bg-card: #0d1a2e;
+  --bg-card2: #0a1628;
+  --accent-blue: #1a7cff;
+  --accent-green: #00c853;
+  --text-primary: #f0f4ff;
+  --text-secondary: #8fa8cc;
+  --text-muted: #4a6080;
+  --border: rgba(26, 124, 255, 0.15);
+  --border-bright: rgba(26, 124, 255, 0.35);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Selection & Scroll behavior */
+::selection { background: rgba(26, 124, 255, 0.3); }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Typography */
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem); /* Slightly larger on desktop */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.section-title span { color: var(--accent-blue); }
+.section-title span.green { color: var(--accent-green); }
+
+/* 3. Buttons (Optimized for Mobile/Desktop) */
+.btn-primary, .btn-outline, .btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary { background: var(--accent-blue); color: #fff; }
+.btn-primary:hover { background: #0066dd; transform: translateY(-3px); }
+
+.btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-bright); }
+.btn-outline:hover { background: rgba(26, 124, 255, 0.08); border-color: var(--accent-blue); }
+
+.btn-whatsapp { background: #25d366; color: #fff; }
+.btn-whatsapp:hover { background: #1db954; transform: translateY(-3px); }
+
+/* 4. Responsive Spacing */
+section { padding: 80px 5%; }
+@media (max-width: 768px) {
+  section { padding: 60px 5%; }
+}

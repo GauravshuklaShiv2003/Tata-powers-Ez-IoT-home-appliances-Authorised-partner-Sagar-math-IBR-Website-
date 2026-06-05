@@ -1,0 +1,87 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+  background: rgba(6, 13, 26, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.navbar.scrolled { background: rgba(6, 13, 26, 0.97); }
+.navbar-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+.navbar-logo span { color: var(--accent-blue); }
+.navbar-links { display: flex; gap: 32px; list-style: none; }
+.navbar-links a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent-blue);
+  transition: width 0.3s ease;
+}
+.navbar-links a:hover { color: var(--text-primary); }
+.navbar-links a:hover::after { width: 100%; }
+.navbar-right { display: flex; align-items: center; gap: 14px; }
+.tata-badge {
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+.badge-label { font-size: 0.5rem; font-weight: 600; color: #333; letter-spacing: 0.5px; text-transform: uppercase; }
+.badge-brand { font-size: 0.75rem; font-weight: 800; color: #003087; }
+.badge-sub { font-size: 0.6rem; font-weight: 700; color: #00a651; }
+.btn-nav {
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.btn-nav:hover { background: #0066dd; transform: translateY(-1px); }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(6, 13, 26, 0.97);
+    padding: 24px 5%;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .navbar-links.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .tata-badge { display: none; }
+}

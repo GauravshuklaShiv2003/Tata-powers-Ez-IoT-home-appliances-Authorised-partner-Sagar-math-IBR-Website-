@@ -1,0 +1,90 @@
+.home-page {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  background-color: var(--bg-primary);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  background: var(--bg-card);
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero-image-placeholder {
+  width: 400px; height: 400px;
+  border: 2px dashed #333;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+}
+
+/* Verticals */
+.verticals-section {
+  display: flex;
+  gap: 30px;
+  padding: 0 5%;
+}
+
+.vertical-card {
+  flex: 1;
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Grids & Stats */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 5%;
+}
+
+.solution-card {
+  padding: 30px;
+  background: var(--bg-card);
+  border-radius: 8px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background: rgba(26, 124, 255, 0.05);
+}
+
+/* Gallery Tabs */
+.tab-controls { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+.tab-controls button {
+  background: none; border: none; color: var(--text-muted);
+  font-size: 1.2rem; cursor: pointer;
+}
+.tab-controls .active-tab { color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); }
+
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 0 5%; }
+.grid-placeholder { aspect-ratio: 1; background: #0a1122; display: flex; align-items: center; justify-content: center; }
+
+/* Utilities */
+.btn-primary { background: var(--accent-blue); color: #fff; padding: 12px 25px; border-radius: 5px; }
+.btn-secondary { background: rgba(255,255,255,0.1); color: #fff; padding: 12px 25px; border-radius: 5px; margin-left: 10px; }
+.btn-outline { border: 1px solid var(--accent-blue); color: var(--accent-blue); padding: 10px 20px; display: inline-block; margin-top: 15px; }
+.brand-strip { text-align: center; padding: 20px; background: var(--accent-blue); color: #fff; }
