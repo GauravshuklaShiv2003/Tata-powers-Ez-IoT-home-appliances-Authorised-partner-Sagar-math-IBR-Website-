@@ -9,31 +9,33 @@
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
   transition: all 0.3s ease;
   animation: wa-bounce 3s ease-in-out infinite;
   text-decoration: none;
 }
-.wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6); }
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(37,211,102,0.6);
+}
 .wa-tooltip {
   position: absolute;
   right: 68px; top: 50%;
   transform: translateY(-50%);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: #0d1a2e;
+  border: 1px solid rgba(26,124,255,0.15);
   border-radius: 8px;
   padding: 8px 14px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #f0f4ff;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  font-family: var(--font-body);
 }
 .wa-float:hover .wa-tooltip { opacity: 1; }
 @keyframes wa-bounce {
-  0%, 100% { transform: translateY(0); }
+  0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }

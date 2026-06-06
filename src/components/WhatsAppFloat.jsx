@@ -1,18 +1,13 @@
-import React from 'react';
-import './WhatsAppFloat.css'; // Apni CSS file import karein
+import './WhatsAppFloat.css'
 
-const WhatsAppFloat = () => {
+function WhatsAppFloat() {
+  const url = `https://wa.me/919999999999?text=${encodeURIComponent('Hi, I want to know more about your services')}`
   return (
-    <a 
-      href="https://wa.me/919999999999" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="wa-float"
-    >
+    <a href={url} target="_blank" rel="noopener noreferrer" className="wa-float">
       💬
       <span className="wa-tooltip">Chat with us!</span>
     </a>
-  );
-};
+  )
+}
 
-export default WhatsAppFloat;
+export default WhatsAppFloat
