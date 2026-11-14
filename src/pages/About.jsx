@@ -12,6 +12,7 @@ const stats = [
   { num: "1 Yr", label: "Tata Warranty" },
 ]
 
+// eslint-disable-next-line no-unused-vars
 const team = [
   { name: "Gaurav Shukla", role: "Founder & Director", initials: "GS" },
 ]
