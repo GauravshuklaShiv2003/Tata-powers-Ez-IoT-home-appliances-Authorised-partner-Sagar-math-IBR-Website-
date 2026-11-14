@@ -10,9 +10,12 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 // Pages
 import Home from './pages/Home';
 import Solutions from './pages/Solutions';
-import Products from './pages/Products';
+import Products from './pages/ProductsPage';
 import About from './pages/About';
 import Contact from './pages/Contact';
+
+// Must stay last so it overrides the other CSS files on mobile
+import './styles/responsive.css';
 
 function App() {
   return (

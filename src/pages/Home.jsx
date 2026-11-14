@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-
-const WA_NUMBER = "919999999999";
-const WA_MSG = encodeURIComponent("Hello SagarMatha IBR, I'm interested in your Smart Home & Lighting solutions.");
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
+import EnquiryModal from './EnquiryModal';
 
 const slides = [
   { tag: "Smart Home Automation", title: "Smarter Homes.", title2: "Lower Bills.", title3: "Complete Control.", desc: "SagarMatha IBR — Authorized Channel Partner of Tata Power EZ Home. Intelligent IoT solutions across Greater Noida & NCR.", bg: "linear-gradient(135deg, #060d1a 0%, #0d2a4a 60%, #060d1a 100%)" },
@@ -55,6 +52,15 @@ function Home() {
   const [visibleSections, setVisibleSections] = useState({});
   const sectionRefs = useRef({});
 
+  // Enquiry form
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [selected, setSelected] = useState('');
+  const book = (name = 'Free Assessment') => (e) => {
+    e.preventDefault();
+    setSelected(name);
+    setEnquiryOpen(true);
+  };
+
   // Auto slideshow
   useEffect(() => {
     const timer = setInterval(() => {
@@ -104,7 +110,7 @@ function Home() {
               </h1>
               <p className="hero-desc">{slide.desc}</p>
               <div className="hero-ctas">
-                <a href={WA_LINK} className="btn-primary" target="_blank" rel="noreferrer">
+                <a href="#enquiry" className="btn-primary" onClick={book('Free Assessment')}>
                   📋 Book Free Assessment
                 </a>
                 <Link to="/solutions" className="btn-outline">Explore Solutions</Link>
@@ -180,7 +186,7 @@ function Home() {
             <ul className="vertical-features">
               {["Smart Lighting — control from anywhere", "AC Automation — remote scheduling", "Smart Geyser — auto schedule", "Energy Monitoring — real-time data", "Voice Control — Alexa & Google", "Security Sensors — alerts"].map((f,i) => <li key={i}>{f}</li>)}
             </ul>
-            <a href={WA_LINK} className="btn-auto" target="_blank" rel="noreferrer">Automate My Home →</a>
+            <a href="#enquiry" className="btn-auto" onClick={book('Smart Home Automation')}>Automate My Home →</a>
           </div>
           <div className="vertical-card lighting">
             <span className="vertical-icon">💡</span>
@@ -190,7 +196,7 @@ function Home() {
             <ul className="vertical-features">
               {["LED Panels & Bulbs — residential", "Industrial High-Bay & Flood Lights", "Commercial & Office Lighting", "Street & Outdoor Lighting", "Energy-efficient, long-lasting", "B2B & B2C — bulk orders welcome"].map((f,i) => <li key={i}>{f}</li>)}
             </ul>
-            <a href={WA_LINK} className="btn-light" target="_blank" rel="noreferrer">Get Lighting Quote →</a>
+            <a href="#enquiry" className="btn-light" onClick={book('Lighting Quote')}>Get Lighting Quote →</a>
           </div>
         </div>
       </section>
@@ -226,7 +232,7 @@ function Home() {
         <p className="section-desc">Certified, plug-and-play IoT devices. Fully compatible. Made in India.</p>
         <div className="products-grid">
           {products.map((p, i) => (
-            <a key={i} href={`${WA_LINK}&text=${encodeURIComponent(`Hi, I'm interested in ${p.name}`)}`} target="_blank" rel="noreferrer" className="product-card">
+            <a key={i} href="#enquiry" onClick={book(p.name)} className="product-card">
               <div className="product-icon">{p.icon}</div>
               <h4>{p.name}</h4>
               <p>{p.desc}</p>
@@ -258,7 +264,7 @@ function Home() {
         <div className="stats-cta">
           <h3>Upgrade Your Home Today!</h3>
           <p>Book a free smart home assessment — completely free site visit.</p>
-          <a href={WA_LINK} className="btn-white" target="_blank" rel="noreferrer">Book Free Smart Visit →</a>
+          <a href="#enquiry" className="btn-white" onClick={book('Free Smart Visit')}>Book Free Smart Visit →</a>
         </div>
       </div>
 
@@ -339,8 +345,7 @@ function Home() {
         <h2>Ready to Make Your Home Smarter?</h2>
         <p>Book a free smart home assessment. Expert visits your home, understands your needs, gives a customized plan — completely free.</p>
         <div className="cta-btns">
-          <a href={WA_LINK} className="btn-whatsapp" target="_blank" rel="noreferrer">💬 WhatsApp Us Now</a>
-          <Link to="/contact" className="btn-primary">📋 Book Free Assessment →</Link>
+          <a href="#enquiry" className="btn-primary" onClick={book('Free Assessment')}>📋 Book Free Assessment →</a>
         </div>
       </div>
 
@@ -353,6 +358,9 @@ function Home() {
           ))}
         </div>
       </div>
+
+      {/* ── ENQUIRY FORM ── */}
+      <EnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} product={selected} />
 
     </div>
   );

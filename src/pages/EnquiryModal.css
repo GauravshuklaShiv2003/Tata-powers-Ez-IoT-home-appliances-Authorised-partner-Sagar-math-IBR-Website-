@@ -1,0 +1,54 @@
+.enq-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.enq-modal {
+  position: relative; width: 100%; max-width: 440px;
+  max-height: 92vh; overflow-y: auto;
+  background: #0b1220; color: #fff;
+  border: 1px solid #1e2a44; border-radius: 14px;
+  padding: 26px 22px;
+}
+.enq-modal h3 { margin: 0 0 4px; font-size: 22px; }
+.enq-sub { margin: 0 0 16px; color: #9aa7c0; font-size: 14px; }
+.enq-modal form { display: flex; flex-direction: column; gap: 12px; }
+.enq-modal input:not([type='hidden']),
+.enq-modal select,
+.enq-modal textarea {
+  width: 100%; box-sizing: border-box;
+  padding: 12px; border-radius: 8px;
+  border: 1px solid #2a3a5c; background: #111a2e; color: #fff;
+  font-size: 16px; /* 16px prevents iOS zoom on focus */
+  font-family: inherit;
+}
+.enq-modal input:focus, .enq-modal select:focus, .enq-modal textarea:focus {
+  outline: none; border-color: #1677ff;
+}
+.enq-product {
+  background: #111a2e; border: 1px dashed #2a3a5c; border-radius: 8px;
+  padding: 10px 12px; font-size: 14px; color: #9aa7c0;
+}
+.enq-product strong { color: #fff; }
+.enq-btn {
+  background: #1677ff; color: #fff; border: 0; border-radius: 8px;
+  padding: 14px; font-weight: 600; font-size: 16px; cursor: pointer;
+}
+.enq-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.enq-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: 0; color: #fff; font-size: 30px; cursor: pointer; line-height: 1;
+}
+.enq-error { color: #ff6b6b; font-size: 14px; }
+.enq-done { text-align: center; padding: 12px 0; }
+.enq-done p { color: #9aa7c0; margin: 8px 0 18px; }
+.enq-tick {
+  width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 50%;
+  background: #00c853; color: #fff; font-size: 30px;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 480px) {
+  .enq-overlay { align-items: flex-end; padding: 0; }
+  .enq-modal { max-width: 100%; border-radius: 16px 16px 0 0; max-height: 94vh; }
+}

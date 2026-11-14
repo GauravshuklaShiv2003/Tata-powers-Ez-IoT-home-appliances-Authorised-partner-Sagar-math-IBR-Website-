@@ -5,7 +5,7 @@ import './Products.css'
 const WA_NUMBER = "919999999999"
 const waLink = (product) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi SagarMatha IBR, I'm interested in ${product}. Please share details and pricing.`)}`
 
-const tataProducts = [
+export const tataProducts = [
   {
     icon: "🔌",
     name: "Smart Converter",
@@ -62,7 +62,7 @@ const tataProducts = [
   },
 ]
 
-const lightingProducts = [
+export const lightingProducts = [
   { icon: "🔆", name: "LED Flat Panels", desc: "Slim, energy-efficient LED panels for offices and homes. Available in multiple wattages.", tag: "Residential / Commercial" },
   { icon: "🏭", name: "Industrial High-Bay LED", desc: "High-lumen fixtures for warehouses and factories. IP65 rated, long lifespan.", tag: "Industrial" },
   { icon: "💧", name: "LED Flood Lights", desc: "Powerful outdoor flood lights for parking, facades, and security lighting.", tag: "Outdoor" },
