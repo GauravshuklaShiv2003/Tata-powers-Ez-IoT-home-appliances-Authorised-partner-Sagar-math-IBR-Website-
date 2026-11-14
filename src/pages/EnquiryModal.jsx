@@ -4,6 +4,13 @@ import './EnquiryModal.css'
 // Replace with your Formspree form ID (free at formspree.io) or your own endpoint
 const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
 
+const TIME_SLOTS = [
+  '9:00 AM – 12:00 PM',
+  '12:00 PM – 3:00 PM',
+  '3:00 PM – 6:00 PM',
+  '6:00 PM – 8:00 PM',
+]
+
 export default function EnquiryModal({ open, onClose, product = '' }) {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
@@ -46,7 +53,7 @@ export default function EnquiryModal({ open, onClose, product = '' }) {
           <div className="enq-done">
             <div className="enq-tick">✓</div>
             <h3>Thank you!</h3>
-            <p>We've received your enquiry and will contact you shortly.</p>
+            <p>We've received your request and will visit you in your chosen time slot.</p>
             <button className="enq-btn" onClick={onClose}>Close</button>
           </div>
         ) : (
@@ -57,20 +64,45 @@ export default function EnquiryModal({ open, onClose, product = '' }) {
             <input type="hidden" name="product" value={product} />
             {product && <div className="enq-product">Enquiry for: <strong>{product}</strong></div>}
 
-            <input name="name" placeholder="Your name" required autoComplete="name" />
-            <input name="phone" type="tel" inputMode="tel" placeholder="Phone number"
-              pattern="[0-9+\s\-]{10,15}" title="Enter a valid phone number" required autoComplete="tel" />
-            <input name="email" type="email" placeholder="Email (optional)" autoComplete="email" />
-            <select name="interest" required defaultValue="">
-              <option value="" disabled>I'm interested in</option>
-              <option>Smart Home Automation</option>
-              <option>Residential Lighting</option>
-              <option>Industrial Lighting</option>
-              <option>Commercial / Office Lighting</option>
-              <option>Street & Outdoor Lighting</option>
-              <option>Other</option>
+            <input
+              name="name"
+              placeholder="Your name"
+              required
+              autoComplete="name"
+            />
+            <input
+              name="phone"
+              type="tel"
+              inputMode="numeric"
+              placeholder="Phone number"
+              pattern="[0-9+\s\-]{10,15}"
+              title="Enter a valid phone number"
+              required
+              autoComplete="tel"
+            />
+            <textarea
+              name="address"
+              rows="3"
+              placeholder="Full address"
+              required
+              autoComplete="street-address"
+            />
+            <input
+              name="pincode"
+              inputMode="numeric"
+              placeholder="Pin code"
+              pattern="[0-9]{6}"
+              maxLength={6}
+              title="Enter a 6-digit pin code"
+              required
+              autoComplete="postal-code"
+            />
+            <select name="time_slot" required defaultValue="">
+              <option value="" disabled>Preferred time slot</option>
+              {TIME_SLOTS.map((slot) => (
+                <option key={slot} value={slot}>{slot}</option>
+              ))}
             </select>
-            <textarea name="message" rows="3" placeholder="Tell us about your space (optional)" />
 
             {status === 'error' && (
               <div className="enq-error">Something went wrong. Please try again.</div>
