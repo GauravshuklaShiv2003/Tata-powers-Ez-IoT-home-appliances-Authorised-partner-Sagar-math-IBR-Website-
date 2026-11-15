@@ -36,7 +36,8 @@ function Navbar() {
             <span className="badge-sub">EZ HOME</span>
           </div>
           <button className="btn-nav" onClick={() => setEnquiryOpen(true)}>
-            Book Free Assessment
+            <span className="btn-long">Book Free Assessment</span>
+            <span className="btn-short">Book Now</span>
           </button>
         </div>
         <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
