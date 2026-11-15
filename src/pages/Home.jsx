@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW: Client Value / Benefits Section */}
+      {/* Client Benefits Section */}
       <section className="client-benefits-section">
         <div className="benefits-header">
           <h2>Why Greater Noida Homeowners Choose Us</h2>
@@ -86,6 +86,40 @@ export default function Home() {
             <div className="benefit-icon">🔧</div>
             <h3>Expert Installation & Support</h3>
             <p>Seamless retrofitting with zero messy rewiring, backed by dedicated local NCR technical support.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Featured Smart Solutions Showcase */}
+      <section className="featured-solutions-section">
+        <div className="section-header">
+          <h2>Explore Popular Smart Solutions</h2>
+          <p>Transform every corner of your home with integrated IoT automation and energy management.</p>
+        </div>
+        <div className="solutions-grid">
+          <div className="solution-item" onClick={() => openModal('Smart Lighting & LED')}>
+            <div className="sol-icon">💡</div>
+            <h3>Smart Lighting & LEDs</h3>
+            <p>Custom ambient lighting, dimming schedules, and voice-controlled LED panels.</p>
+            <span className="sol-link">Enquire Now →</span>
+          </div>
+          <div className="solution-item" onClick={() => openModal('Home Appliance Automation')}>
+            <div className="sol-icon">🌡️</div>
+            <h3>Appliance Automation</h3>
+            <p>Smart geysers, AC controllers, and heavy appliance scheduling from anywhere.</p>
+            <span className="sol-link">Enquire Now →</span>
+          </div>
+          <div className="solution-item" onClick={() => openModal('Smart Security & Locks')}>
+            <div className="sol-icon">🔒</div>
+            <h3>Security & Smart Locks</h3>
+            <p>Biometric door locks, video door phones, and real-time intrusion alerts.</p>
+            <span className="sol-link">Enquire Now →</span>
+          </div>
+          <div className="solution-item" onClick={() => openModal('Energy Monitoring System')}>
+            <div className="sol-icon">⚡</div>
+            <h3>Energy Monitoring</h3>
+            <p>Real-time kWh tracking and automated power optimization for lower electricity bills.</p>
+            <span className="sol-link">Enquire Now →</span>
           </div>
         </div>
       </section>
