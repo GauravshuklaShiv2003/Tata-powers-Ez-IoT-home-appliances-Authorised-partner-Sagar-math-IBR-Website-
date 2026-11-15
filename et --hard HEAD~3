@@ -1,0 +1,10 @@
+[33m5c18791[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Restore original hero design and colors matching image 1
+[33ma8fcc39[m Fix LogoLoader state in App.js so it fades out correctly
+[33mb037693[m Add animated SagarMatha IBR logo loader on startup
+[33m2ad483a[m Add Geyser Automation card and update contact number to 9958333098
+[33m19c92dc[m Compact mobile navbar and hero buttons
+[33m9da0e81[m Update founder name
+[33m4f84387[m Upgrade About page: process, founder, FAQ, animated stats
+[33m974bb8f[m Add logo to navbar, footer and hero
+[33m813b405[m Set site title and SagarMatha IBR favicon
+[33mc53c5d0[m Fix: add enquiry form components, remove WhatsApp

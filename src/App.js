@@ -1,4 +1,5 @@
-import React from 'react';
+import LogoLoader from './components/LogoLoader';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/global.css';
 
@@ -18,8 +19,10 @@ import Contact from './pages/Contact';
 import './styles/responsive.css';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <Router>
+      {isLoading && <LogoLoader onFinished={() => setIsLoading(false)} />}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
