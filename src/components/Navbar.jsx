@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import EnquiryModal from '../pages/EnquiryModal'
 import './Navbar.css'
+import logoMark from '../assets/logo-mark.png'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -18,6 +19,7 @@ function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <Link to="/" className="navbar-logo">
+          <img src={logoMark} alt="" className="navbar-logo-img" />
           Sagarmatha<span>IBR</span>
         </Link>
         <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>

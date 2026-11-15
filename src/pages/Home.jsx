@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import EnquiryModal from './EnquiryModal';
+import logoMark from '../assets/logo-mark.png';
 
 const slides = [
   { tag: "Smart Home Automation", title: "Smarter Homes.", title2: "Lower Bills.", title3: "Complete Control.", desc: "SagarMatha IBR — Authorized Channel Partner of Tata Power EZ Home. Intelligent IoT solutions across Greater Noida & NCR.", bg: "linear-gradient(135deg, #060d1a 0%, #0d2a4a 60%, #060d1a 100%)" },
@@ -137,6 +138,8 @@ function Home() {
             </div>
           </div>
         ))}
+
+        <img src={logoMark} alt="" aria-hidden="true" className="hero-watermark" />
 
         {/* Dots */}
         <div className="hero-dots">

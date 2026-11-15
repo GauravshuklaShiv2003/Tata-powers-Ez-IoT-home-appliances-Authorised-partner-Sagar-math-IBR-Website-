@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
+import logoFull from '../assets/logo-full.png'
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="footer-logo">Sagarmatha<span>IBR</span></div>
+          <img src={logoFull} alt="SagarMatha IBR" className="footer-logo-img" />
           <p>Authorized Channel Partner of Tata Power EZ Home. Smart home automation and premium lighting solutions across Greater Noida & NCR.</p>
           <div className="footer-tata-badge">
             <div className="ftb-label">Authorized Channel Partner of</div>

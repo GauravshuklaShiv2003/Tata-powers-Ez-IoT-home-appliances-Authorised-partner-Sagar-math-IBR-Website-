@@ -36,3 +36,16 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 480px) {
   .products-grid, .stats-grid { grid-template-columns: 1fr !important; }
 }
+/* ── Logo placement ── */
+.navbar-logo { display: flex !important; align-items: center; gap: 10px; }
+.navbar-logo-img { height: 36px; width: auto; display: block; }
+.footer-logo-img { width: 210px; max-width: 100%; height: auto; display: block; margin-bottom: 16px; }
+.hero-watermark {
+  position: absolute; right: 6%; top: 50%; transform: translateY(-50%);
+  width: min(46vw, 560px); height: auto;
+  opacity: 0.07; z-index: 1; pointer-events: none; user-select: none;
+}
+@media (max-width: 768px) {
+  .navbar-logo-img { height: 30px; }
+  .hero-watermark { right: -12%; top: 62%; width: 85vw; opacity: 0.06; }
+}
