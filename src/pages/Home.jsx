@@ -65,6 +65,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEW: Client Value / Benefits Section */}
+      <section className="client-benefits-section">
+        <div className="benefits-header">
+          <h2>Why Greater Noida Homeowners Choose Us</h2>
+          <p>Certified smart automation and energy-efficient lighting solutions tailored for modern living.</p>
+        </div>
+        <div className="benefits-grid">
+          <div className="benefit-card" onClick={() => openModal('Tata Power EZ Home Consultation')}>
+            <div className="benefit-icon">🛡️</div>
+            <h3>Authorized Partner</h3>
+            <p>Official channel partner for Tata Power EZ Home automation systems with genuine warranty.</p>
+          </div>
+          <div className="benefit-card" onClick={() => openModal('Energy Audit Assessment')}>
+            <div className="benefit-icon">📉</div>
+            <h3>Up to 30% Energy Savings</h3>
+            <p>Smart scheduling and real-time power monitoring to drastically reduce your monthly electricity bills.</p>
+          </div>
+          <div className="benefit-card" onClick={() => openModal('Professional Installation Support')}>
+            <div className="benefit-icon">🔧</div>
+            <h3>Expert Installation & Support</h3>
+            <p>Seamless retrofitting with zero messy rewiring, backed by dedicated local NCR technical support.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Solutions / Products CTA Section */}
       <section className="home-cta-section">
         <div className="cta-box">
