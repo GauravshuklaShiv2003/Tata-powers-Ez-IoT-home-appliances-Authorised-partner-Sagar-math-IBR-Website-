@@ -10,7 +10,7 @@ const stats = [
 ]
 
 const team = [
-  { name: 'Gaurav Shukla', role: 'Founder & Director', initials: 'GS' },
+  { name: 'Zishan Ibraheem', role: 'Founder & Director', initials: 'ZI' },
 ]
 
 const coverage = ['Greater Noida', 'Noida', 'Noida Extension', 'Gaur City', 'Ghaziabad', 'NCR Region']
