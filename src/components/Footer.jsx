@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
+import SITE from '../config'
 import logoFull from '../assets/logo-full.png'
 
 function Footer() {
@@ -37,19 +38,19 @@ function Footer() {
         </div>
         <div className="footer-col">
           <h5>Contact Us</h5>
-          <div className="footer-contact-item"><span>📞</span><a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></div>
-          <div className="footer-contact-item"><span>💬</span><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></div>
-          <div className="footer-contact-item"><span>📧</span><a href="mailto:info@sagarmathaezhome.in">info@sagarmathaezhome.in</a></div>
+          <div className="footer-contact-item"><span>📞</span><a href={`tel:+91${SITE.phone}`}>{SITE.phoneDisplay}</a></div>
+          <div className="footer-contact-item"><span>💬</span><a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener noreferrer">WhatsApp Us</a></div>
+          <div className="footer-contact-item"><span>📧</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
           <div className="footer-contact-item"><span>📍</span><span>Greater Noida, UP, India</span></div>
           <div className="footer-contact-item"><span>📸</span><a href="https://instagram.com/sagarmatha_ibr" target="_blank" rel="noopener noreferrer">@sagarmatha_ibr</a></div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 SagarMatha IBR. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SagarMatha IBR. All rights reserved.</p>
         <div className="footer-social">
           <a href="https://instagram.com/sagarmatha_ibr" target="_blank" rel="noopener noreferrer" className="social-btn">📸</a>
-          <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="social-btn">💬</a>
-          <a href="mailto:info@sagarmathaezhome.in" className="social-btn">📧</a>
+          <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="WhatsApp">💬</a>
+          <a href={`mailto:${SITE.email}`} className="social-btn" aria-label="Email">📧</a>
         </div>
       </div>
     </footer>

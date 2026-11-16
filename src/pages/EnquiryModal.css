@@ -52,3 +52,7 @@
   .enq-overlay { align-items: flex-end; padding: 0; }
   .enq-modal { max-width: 100%; border-radius: 16px 16px 0 0; max-height: 94vh; }
 }
+.enq-error a { color: #fff; text-decoration: underline; }
+/* Inline version used on the Contact page */
+.enq-inline { max-width: 480px; width: 100%; margin: 0; max-height: none; }
+.enq-inline form { display: flex; flex-direction: column; gap: 12px; }

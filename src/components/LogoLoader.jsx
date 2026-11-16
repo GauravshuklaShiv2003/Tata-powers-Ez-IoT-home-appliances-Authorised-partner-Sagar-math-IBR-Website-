@@ -12,7 +12,7 @@ export default function LogoLoader({ onFinished }) {
         if (onFinished) onFinished();
       }, 500);
       return () => clearTimeout(removeTimer);
-    }, 1200);
+    }, 900);
 
     return () => clearTimeout(timer);
   }, [onFinished]);

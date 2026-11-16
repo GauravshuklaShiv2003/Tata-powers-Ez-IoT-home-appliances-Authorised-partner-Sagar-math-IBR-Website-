@@ -39,3 +39,22 @@
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+.call-float {
+  position: fixed;
+  bottom: 100px; right: 28px;
+  z-index: 999;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #1677ff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; text-decoration: none;
+  box-shadow: 0 4px 18px rgba(22,119,255,0.5);
+  transition: transform 0.3s ease;
+}
+.call-float:hover { transform: scale(1.1); }
+.call-float:hover .wa-tooltip { opacity: 1; }
+@media (max-width: 600px) {
+  .wa-float { bottom: 18px; right: 16px; width: 52px; height: 52px; }
+  .call-float { bottom: 82px; right: 19px; width: 46px; height: 46px; }
+  .wa-tooltip { display: none; }
+}
