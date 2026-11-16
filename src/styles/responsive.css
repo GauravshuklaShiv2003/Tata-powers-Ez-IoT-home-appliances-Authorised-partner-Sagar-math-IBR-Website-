@@ -70,3 +70,22 @@ img { max-width: 100%; height: auto; }
   .navbar-logo-img { height: 22px !important; }
   .btn-nav { padding: 7px 10px !important; }
 }
+
+/* ===== Site-wide polish ===== */
+:root {
+  --radius: 12px;
+  --radius-lg: 20px;
+  --border-bright: rgba(26, 124, 255, 0.35);
+}
+html { scroll-padding-top: 84px; }
+::selection { background: rgba(26, 124, 255, 0.35); color: #fff; }
+:focus-visible { outline: 2px solid #1a7cff; outline-offset: 3px; border-radius: 4px; }
+button, input, select, textarea { font-family: inherit; }
+button:not(:disabled) { cursor: pointer; }
+.hero-title { font-size: clamp(2.2rem, 5.2vw, 3.8rem) !important; }
+.hero-cta-group { flex-wrap: wrap; }
+.btn-primary, .btn-secondary, .btn-outline { text-decoration: none; display: inline-block; text-align: center; }
+@media (max-width: 900px) {
+  .hero-section { gap: 24px !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+}

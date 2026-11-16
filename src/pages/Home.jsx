@@ -1,8 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
 import EnquiryModal from './EnquiryModal';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import heroVideo from '../assets/hero-video.mp4';
 import heroPoster from '../assets/hero-poster.jpg';
+
+const trustItems = [
+  { icon: '🏆', title: 'Authorized Partner', sub: 'Tata Power EZ Home' },
+  { icon: '🛡️', title: '1-Year Warranty', sub: 'Official Tata warranty' },
+  { icon: '🔧', title: 'Certified Installation', sub: 'Trained technicians' },
+  { icon: '📍', title: 'Local NCR Support', sub: 'Greater Noida & NCR' },
+];
+
+const ezProducts = [
+  { icon: '🔌', name: 'Smart Converter', desc: 'Make any appliance smart' },
+  { icon: '🔋', name: 'Smart Plug 16A', desc: 'High-load smart switching' },
+  { icon: '📡', name: 'IR Blaster', desc: 'Control any IR device remotely' },
+  { icon: '⚡', name: 'Energy Manager', desc: 'Real-time consumption tracking' },
+  { icon: '🔘', name: 'Smart Switch', desc: 'Replace existing switches easily' },
+];
+
+const howSteps = [
+  { icon: '📞', title: 'Book a Free Assessment', desc: 'Share your address and a convenient time slot.' },
+  { icon: '🔍', title: 'Site Visit & Plan', desc: 'Our expert recommends the right products for your home.' },
+  { icon: '🔧', title: 'Professional Installation', desc: 'Certified technicians install and configure everything.' },
+  { icon: '🎧', title: 'After-Sales Support', desc: 'App setup and troubleshooting, whenever you need us.' },
+];
+
+const areas = ['Greater Noida', 'Noida', 'Noida Extension', 'Gaur City', 'Ghaziabad', 'NCR Region'];
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -51,7 +76,7 @@ export default function Home() {
             <button className="btn-primary" onClick={() => openModal('Free Home Assessment')}>
               Book Free Assessment
             </button>
-            <a href="/solutions" className="btn-secondary">Explore Solutions</a>
+            <Link to="/solutions" className="btn-secondary">Explore Solutions</Link>
           </div>
         </div>
 
@@ -162,6 +187,71 @@ export default function Home() {
             <p>Real-time kWh tracking and automated power optimization for lower electricity bills.</p>
             <span className="sol-link">Enquire Now →</span>
           </div>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="hm-trust">
+        {trustItems.map((t, i) => (
+          <div key={i} className="hm-trust-item">
+            <span className="hm-trust-icon">{t.icon}</span>
+            <div>
+              <div className="hm-trust-title">{t.title}</div>
+              <div className="hm-trust-sub">{t.sub}</div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Tata Power EZ Home devices */}
+      <section className="hm-section">
+        <div className="hm-head">
+          <span className="hm-label">Our Smart Products</span>
+          <h2>The <span>Tata Power EZ Home</span> Ecosystem</h2>
+          <p>Certified, plug-and-play IoT devices. Fully compatible. Made in India.</p>
+        </div>
+        <div className="hm-products">
+          {ezProducts.map((p, i) => (
+            <button key={i} type="button" className="hm-product" onClick={() => openModal(p.name)}>
+              <span className="hm-product-icon">{p.icon}</span>
+              <h4>{p.name}</h4>
+              <p>{p.desc}</p>
+              <span className="hm-product-link">Enquire Now →</span>
+            </button>
+          ))}
+        </div>
+        <div className="hm-center">
+          <Link to="/products" className="btn-secondary">View All Products</Link>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="hm-section hm-alt">
+        <div className="hm-head">
+          <span className="hm-label">How It Works</span>
+          <h2>From Enquiry to <span>Installation</span></h2>
+          <p>Four simple steps to a smarter home.</p>
+        </div>
+        <div className="hm-steps">
+          {howSteps.map((s, i) => (
+            <div key={i} className="hm-step">
+              <span className="hm-step-num">{String(i + 1).padStart(2, '0')}</span>
+              <span className="hm-step-icon">{s.icon}</span>
+              <h4>{s.title}</h4>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Service area */}
+      <section className="hm-section">
+        <div className="hm-head">
+          <span className="hm-label">Service Area</span>
+          <h2>We Serve <span>Greater Noida & NCR</span></h2>
+        </div>
+        <div className="hm-areas">
+          {areas.map((a, i) => <span key={i} className="hm-area">📍 {a}</span>)}
         </div>
       </section>
 

@@ -452,3 +452,78 @@
   .hero-video-wrap { max-width: 100%; }
   .hero-card-stack { max-width: 100%; }
 }
+
+/* ===== Home: trust strip, products, steps, areas ===== */
+.hm-trust {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  max-width: 1400px; margin: 0 auto 20px; padding: 0 8%;
+}
+.hm-trust-item {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(18, 27, 53, 0.7); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 14px 16px;
+}
+.hm-trust-icon { font-size: 1.5rem; }
+.hm-trust-title { font-weight: 700; font-size: 0.9rem; }
+.hm-trust-sub { color: #8c9cb8; font-size: 0.78rem; }
+
+.hm-section { padding: 70px 8%; max-width: 1400px; margin: 0 auto; }
+.hm-alt { max-width: none; background: rgba(255,255,255,0.025); }
+.hm-alt > * { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.hm-head { text-align: center; margin-bottom: 38px; }
+.hm-label {
+  display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: #1677ff; margin-bottom: 10px;
+}
+.hm-head h2 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); font-weight: 800; margin-bottom: 10px; }
+.hm-head h2 span { color: #1677ff; }
+.hm-head p { color: #8c9cb8; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+
+.hm-products { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.hm-product {
+  background: #121b35; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+  padding: 24px 16px; text-align: center; color: #fff; font-family: inherit; cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hm-product:hover { border-color: #1677ff; transform: translateY(-4px); box-shadow: 0 12px 28px rgba(22,119,255,0.18); }
+.hm-product-icon { font-size: 2rem; display: block; margin-bottom: 12px; }
+.hm-product h4 { font-size: 0.98rem; margin-bottom: 6px; }
+.hm-product p { color: #8c9cb8; font-size: 0.8rem; line-height: 1.5; margin-bottom: 12px; }
+.hm-product-link { color: #1677ff; font-size: 0.82rem; font-weight: 600; }
+.hm-center { text-align: center; margin-top: 30px; }
+.hm-center .btn-secondary { display: inline-block; }
+
+.hm-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.hm-step {
+  position: relative; background: #121b35; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 28px 20px 24px; transition: all 0.3s ease;
+}
+.hm-step:hover { border-color: rgba(22,119,255,0.5); transform: translateY(-4px); }
+.hm-step-num {
+  position: absolute; top: 12px; right: 16px; font-size: 1.8rem; font-weight: 800; color: rgba(22,119,255,0.2);
+}
+.hm-step-icon { font-size: 1.9rem; display: block; margin-bottom: 12px; }
+.hm-step h4 { font-size: 1rem; margin-bottom: 6px; }
+.hm-step p { color: #8c9cb8; font-size: 0.85rem; line-height: 1.6; }
+
+.hm-areas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.hm-area {
+  background: #121b35; border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+  padding: 10px 20px; font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .hm-products { grid-template-columns: repeat(3, 1fr); }
+  .hm-steps { grid-template-columns: repeat(2, 1fr); }
+  .hm-trust { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .hm-trust { padding: 0 5%; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hm-trust-item { padding: 12px; gap: 9px; }
+  .hm-trust-icon { font-size: 1.25rem; }
+  .hm-trust-title { font-size: 0.8rem; }
+  .hm-trust-sub { font-size: 0.7rem; }
+  .hm-section { padding: 50px 5%; }
+  .hm-products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .hm-steps { grid-template-columns: 1fr; }
+}
