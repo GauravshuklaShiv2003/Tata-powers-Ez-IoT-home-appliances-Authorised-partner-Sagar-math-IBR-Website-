@@ -132,7 +132,7 @@ export default function Home() {
       {/* Client Benefits Section */}
       <section className="client-benefits-section">
         <div className="benefits-header">
-          <h2>Why Greater Noida Homeowners Choose Us</h2>
+          <h2>Why NCR Homeowners Choose Us</h2>
           <p>Certified smart automation and energy-efficient lighting solutions tailored for modern living.</p>
         </div>
         <div className="benefits-grid">
@@ -246,7 +246,7 @@ export default function Home() {
       <section className="hm-section">
         <div className="hm-head">
           <span className="hm-label">Service Area</span>
-          <h2>We Serve <span>Greater Noida & NCR</span></h2>
+          <h2>We Serve <span>Noida & NCR</span></h2>
         </div>
         <div className="hm-areas">
           {areas.map((a, i) => <span key={i} className="hm-area">📍 {a}</span>)}
