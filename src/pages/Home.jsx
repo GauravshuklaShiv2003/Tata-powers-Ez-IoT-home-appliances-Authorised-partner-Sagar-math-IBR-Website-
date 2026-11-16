@@ -3,7 +3,6 @@ import EnquiryModal from './EnquiryModal';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import heroVideo from '../assets/hero-video.mp4';
-import heroPoster from '../assets/hero-poster.jpg';
 
 const trustItems = [
   { icon: '🏆', title: 'Authorized Partner', sub: 'Tata Power EZ Home' },
@@ -86,7 +85,6 @@ export default function Home() {
               ref={videoRef}
               className="hero-video"
               src={heroVideo}
-              poster={heroPoster}
               autoPlay
               muted
               loop
