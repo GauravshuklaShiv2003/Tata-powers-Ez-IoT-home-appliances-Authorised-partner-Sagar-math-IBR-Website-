@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import EnquiryModal from './EnquiryModal';
 import './Home.css';
+import heroVideo from '../assets/hero-video.mp4';
+import heroPoster from '../assets/hero-poster.jpg';
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState('');
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  // Respect users who prefer reduced motion: don't autoplay the hero video
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.pause();
+    }
+  }, []);
+
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+    if (!v.muted) v.play().catch(() => {});
+  };
 
   const openModal = (productName = 'General Smart Home Assessment') => {
     setSelectedProduct(productName);
@@ -36,6 +56,27 @@ export default function Home() {
         </div>
 
         <div className="hero-visual">
+          <div className="hero-video-wrap">
+            <video
+              ref={videoRef}
+              className="hero-video"
+              src={heroVideo}
+              poster={heroPoster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
+            <button
+              type="button"
+              className="hero-video-sound"
+              onClick={toggleSound}
+              aria-label={muted ? 'Turn sound on' : 'Turn sound off'}
+            >
+              {muted ? '🔇 Sound on' : '🔊 Sound off'}
+            </button>
+          </div>
           <div className="hero-card-stack">
             <div className="hero-card" onClick={() => openModal('Smart Lights')}>
               <div className="card-icon">💡</div>
@@ -45,11 +86,11 @@ export default function Home() {
               </div>
               <span className="status-dot green"></span>
             </div>
-            <div className="hero-card" onClick={() => openModal('AC Automation')}>
-              <div className="card-icon">❄️</div>
+            <div className="hero-card" onClick={() => openModal('Geyser Automation')}>
+              <div className="card-icon">🚿</div>
               <div className="card-info">
-                <h4>AC Automation</h4>
-                <p>Bedroom • 24°C</p>
+                <h4>Geyser Automation</h4>
+                <p>Bathroom • 45°C Ready</p>
               </div>
               <span className="status-dot green"></span>
             </div>
