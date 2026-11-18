@@ -3,6 +3,7 @@ import EnquiryModal from './EnquiryModal';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import heroVideo from '../assets/hero-video.mp4';
+import SITE from '../config';
 
 const trustItems = [
   { icon: '🏆', title: 'Authorized Partner', sub: 'Tata Power EZ Home' },
@@ -24,6 +25,21 @@ const howSteps = [
   { icon: '🔍', title: 'Site Visit & Plan', desc: 'Our expert recommends the right products for your home.' },
   { icon: '🔧', title: 'Professional Installation', desc: 'Certified technicians install and configure everything.' },
   { icon: '🎧', title: 'After-Sales Support', desc: 'App setup and troubleshooting, whenever you need us.' },
+];
+
+const works = [
+  { icon: '🎙️', name: 'Alexa' },
+  { icon: '🗣️', name: 'Google Assistant' },
+  { icon: '📱', name: 'Android & iOS App' },
+  { icon: '🏠', name: 'Your Existing Appliances' },
+];
+
+const faqs = [
+  { q: 'Do I need to rewire my home?', a: 'No. Tata Power EZ Home devices are plug-and-play and work with your existing appliances and switches.' },
+  { q: 'Will it work with my existing AC and geyser?', a: 'Yes. An IR Blaster handles most ACs and a Smart Converter makes a geyser smart. Our expert confirms compatibility in the free assessment.' },
+  { q: 'Is the assessment really free?', a: 'Yes. Share your address and a convenient time slot, and we will visit, understand your setup and recommend the right products.' },
+  { q: 'Do the products come with warranty?', a: 'Products are genuine Tata Power EZ Home devices supplied by an authorized partner, with the official manufacturer warranty.' },
+  { q: 'Which areas do you serve?', a: 'Greater Noida, Noida, Noida Extension, Gaur City, Ghaziabad and the wider NCR region.' },
 ];
 
 const areas = ['Greater Noida', 'Noida', 'Noida Extension', 'Gaur City', 'Ghaziabad', 'NCR Region'];
@@ -242,6 +258,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Works with */}
+      <section className="hm-section hm-alt">
+        <div className="hm-head">
+          <span className="hm-label">Compatibility</span>
+          <h2>Works With <span>What You Already Use</span></h2>
+        </div>
+        <div className="hm-areas">
+          {works.map((w, i) => <span key={i} className="hm-area">{w.icon} {w.name}</span>)}
+        </div>
+      </section>
+
       {/* Service area */}
       <section className="hm-section">
         <div className="hm-head">
@@ -250,6 +277,36 @@ export default function Home() {
         </div>
         <div className="hm-areas">
           {areas.map((a, i) => <span key={i} className="hm-area">📍 {a}</span>)}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="hm-section hm-alt hm-faq">
+        <div className="hm-head">
+          <span className="hm-label">FAQ</span>
+          <h2>Common <span>Questions</span></h2>
+        </div>
+        <div className="hm-faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="hm-faq-item">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* Quick contact */}
+      <section className="hm-section">
+        <div className="hm-contact">
+          <div>
+            <h3>Prefer to talk? We are a call away.</h3>
+            <p>Speak to our team about your home, budget and requirements.</p>
+          </div>
+          <div className="hm-contact-btns">
+            <a className="btn-primary" href={`tel:+91${SITE.phone}`}>📞 Call {SITE.phoneDisplay}</a>
+            <a className="btn-secondary" href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer">💬 WhatsApp</a>
+          </div>
         </div>
       </section>
 

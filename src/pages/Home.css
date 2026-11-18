@@ -527,3 +527,22 @@
   .hm-products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .hm-steps { grid-template-columns: 1fr; }
 }
+
+
+/* ---- FAQ + quick contact ---- */
+.hm-faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.hm-faq-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0 18px; }
+.hm-faq-item summary { cursor: pointer; padding: 16px 0; font-weight: 600; color: #fff; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.hm-faq-item summary::-webkit-details-marker { display: none; }
+.hm-faq-item summary::after { content: '+'; color: #1677ff; font-size: 22px; line-height: 1; }
+.hm-faq-item[open] summary::after { content: '\2212'; }
+.hm-faq-item p { margin: 0 0 16px; color: #9aa7c0; line-height: 1.6; }
+.hm-contact { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: rgba(22,119,255,0.08); border: 1px solid rgba(22,119,255,0.3); border-radius: 16px; padding: 24px; }
+.hm-contact h3 { margin: 0 0 6px; color: #fff; }
+.hm-contact p { margin: 0; color: #9aa7c0; }
+.hm-contact-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hm-contact-btns a { text-decoration: none; text-align: center; }
+@media (max-width: 600px) {
+  .hm-contact { padding: 18px; }
+  .hm-contact-btns { width: 100%; flex-direction: column; }
+}
